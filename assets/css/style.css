@@ -993,3 +993,122 @@ ul {
     display: none;
   }
 }
+
+
+/* ========= MODE NUIT ========= */
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: .25s;
+}
+
+.theme-toggle:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  transform: translateY(-1px);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --soft: #10182b;
+  --soft-blue: #142342;
+  --text: #eef4ff;
+  --muted: #a7b4cc;
+  --blue: #6f9cff;
+  --blue-dark: #5688f5;
+  --border: #263552;
+  --green: #48d3a2;
+  --purple: #a38bff;
+  --shadow: 0 16px 45px rgba(0, 0, 0, .22);
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .header,
+html[data-theme="dark"] .nav-links,
+html[data-theme="dark"] .btn-secondary,
+html[data-theme="dark"] .filter-btn,
+html[data-theme="dark"] .mini-card,
+html[data-theme="dark"] .content-card,
+html[data-theme="dark"] .project-card,
+html[data-theme="dark"] .cert-card,
+html[data-theme="dark"] .e6-card,
+html[data-theme="dark"] .company-card,
+html[data-theme="dark"] .missions-card,
+html[data-theme="dark"] .watch-hero,
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .theme-toggle {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+html[data-theme="dark"] .header {
+  background: rgba(11, 16, 32, .92);
+  border-bottom-color: var(--border);
+}
+
+html[data-theme="dark"] .nav-links a,
+html[data-theme="dark"] .hero h2,
+html[data-theme="dark"] .profile-copy .lead,
+html[data-theme="dark"] .project-card h3,
+html[data-theme="dark"] .content-card h3,
+html[data-theme="dark"] .cert-card h3,
+html[data-theme="dark"] .company-card h3,
+html[data-theme="dark"] .missions-card h3,
+html[data-theme="dark"] .e6-card h3,
+html[data-theme="dark"] .watch-hero h3 {
+  color: var(--text);
+}
+
+html[data-theme="dark"] .soft-section {
+  background: var(--soft);
+}
+
+html[data-theme="dark"] .content-card.featured {
+  background: linear-gradient(180deg, #111b30, #0f1729);
+  border-color: #34548a;
+}
+
+html[data-theme="dark"] .tags span {
+  background: #111b30;
+  color: #b8c7e1;
+  border-color: var(--border);
+}
+
+html[data-theme="dark"] .project-badge.school { background: #14284d; }
+html[data-theme="dark"] .project-badge.pro { background: #123328; }
+html[data-theme="dark"] .project-badge.personal { background: #282044; }
+
+html[data-theme="dark"] .contact-box {
+  background:
+    radial-gradient(circle at top left, rgba(111,156,255,.14), transparent 36%),
+    linear-gradient(135deg, #10182b, #121d34);
+  border-color: var(--border);
+}
+
+html[data-theme="dark"] .modal-overlay {
+  background: rgba(0, 0, 0, .68);
+}
+
+html[data-theme="dark"] .hero-bg-one {
+  background: radial-gradient(circle, rgba(111,156,255,.14), transparent 70%);
+}
+
+html[data-theme="dark"] .hero-bg-two {
+  background: radial-gradient(circle, rgba(70,117,220,.12), transparent 70%);
+}
+
+@media (max-width: 1000px) {
+  html[data-theme="dark"] .nav-links {
+    background: #0b1020;
+  }
+}

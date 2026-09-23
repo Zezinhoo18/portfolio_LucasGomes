@@ -94,3 +94,27 @@ sections.forEach(section => navObserver.observe(section));
 
 // Année
 document.getElementById("year").textContent = new Date().getFullYear();
+
+
+// Mode clair / nuit
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = themeToggle?.querySelector(".theme-icon");
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  if (themeIcon) themeIcon.textContent = theme === "dark" ? "☀" : "☾";
+  if (themeToggle) {
+    const dark = theme === "dark";
+    themeToggle.setAttribute("aria-label", dark ? "Activer le mode clair" : "Activer le mode nuit");
+    themeToggle.title = dark ? "Mode clair" : "Mode nuit";
+  }
+}
+
+const savedTheme = localStorage.getItem("portfolio-theme");
+applyTheme(savedTheme === "dark" ? "dark" : "light");
+
+themeToggle?.addEventListener("click", () => {
+  const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  localStorage.setItem("portfolio-theme", nextTheme);
+  applyTheme(nextTheme);
+});
