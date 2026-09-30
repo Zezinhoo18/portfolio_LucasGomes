@@ -118,3 +118,13 @@ themeToggle?.addEventListener("click", () => {
   localStorage.setItem("portfolio-theme", nextTheme);
   applyTheme(nextTheme);
 });
+
+
+// Cartes BTS SIO : ouverture SISR / SLAM
+document.querySelectorAll(".bts-option-toggle").forEach(button => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".bts-option-card");
+    const isOpen = card.classList.toggle("open");
+    button.setAttribute("aria-expanded", String(isOpen));
+  });
+});
